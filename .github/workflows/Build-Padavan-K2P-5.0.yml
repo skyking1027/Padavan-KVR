@@ -76,22 +76,23 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config  #frpc
         #echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> .config #aliddns
         ##科学上网##
-        #echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> .config
-        #echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=y" >> .config
-        #echo "CONFIG_FIRMWARE_INCLUDE_XRAY=y" >> .config
-        #echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=y" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=n" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=n" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_XRAY=n" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=n" >> .config
         ##vpn
         #echo  "CONFIG_FIRMWARE_INCLUDE_OPENVPN=n" >> .config
-        #echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER=y" >> .config
-        #echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CLIENT=y" >> .config
-        #echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CMD=y" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER=n" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CLIENT=n" >> .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CMD=n" >> .config
         
         ###############################################################################
         ##########
         #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照上面的格式添加即可
         #格式如下：
-        #sed -i '/自定义项/d' .config
-        #echo "自定义项=y" >> .config
+        #sed -i '/CONFIG_FIRMWARE_INCLUDE_ADBYBY/d' .config
+        #echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=y" >> .config
+        sed -i '/自定义项/d' .config
         #########################################################################################
         sed -i 's/\r//' /opt/rt-n56u/trunk/.config
         sudo ./clear_tree
